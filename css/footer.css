@@ -155,7 +155,6 @@
 @media (min-width: 768px) {
   .footer-container {
     width: 584px;
-    max-width: none;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -205,8 +204,7 @@
   }
 
   .footer-container {
-    width: 1158px;
-    max-width: 1158px;
+    width: 100%;
     flex-wrap: nowrap;
     align-items: baseline;
     gap: 0;
