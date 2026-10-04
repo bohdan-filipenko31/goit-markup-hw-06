@@ -31,7 +31,7 @@
   letter-spacing: 0.02em;
   text-align: center;
   color: var(--color-dark);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .features-text {
@@ -52,6 +52,10 @@
 
   .features-item {
     width: calc((100% - 24px) / 2);
+  }
+
+  .features-subtitle {
+    text-align: left;
   }
 }
 
