@@ -24,7 +24,7 @@
   min-height: 432px;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 112px 0;
+  padding: 72px 0;
   background-color: var(--color-dark);
   background-image:
     linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -44,7 +44,7 @@
 }
 
 .hero-title {
-  max-width: 320px;
+  max-width: 216px;
   margin-bottom: 72px;
   font-size: 36px;
   line-height: 1.11;
@@ -72,6 +72,7 @@
 @media (min-width: 768px) {
   .hero {
     min-height: 436px;
+    padding: 112px 0;
   }
 
   .hero-title {
