@@ -6,24 +6,25 @@
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: normal;
+  padding: 16px 0;
 }
 
 .header-nav {
-  display: flex;
+  display: none;
   align-items: center;
 }
 
 .logo {
   font-family:
     "Raleway", sans-serif; /* Assuming Raleway for logo based on typical designs, fallback to Inter */
-  font-weight: 800;
+  font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--color-dark);
-  margin-right: 76px;
+  margin-right: auto;
 }
 
 .logo-accent {
@@ -31,7 +32,7 @@
 }
 
 .nav-list {
-  display: flex;
+  display: none;
   gap: 40px;
 }
 
@@ -68,6 +69,7 @@
 }
 
 .contacts {
+  display: none;
   font-style: normal;
 }
 
@@ -87,4 +89,103 @@
 .contacts-link:hover,
 .contacts-link:focus {
   color: var(--color-pressed);
+}
+
+/* Mobile-first header */
+.header {
+  box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08),
+    0 1px 1px rgba(46, 47, 66, 0.16), 0 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.header-container {
+  justify-content: normal;
+  padding: 16px 0;
+}
+
+.logo {
+  margin-right: auto;
+  font-weight: 700;
+}
+
+.header-nav,
+.contacts {
+  display: none;
+}
+
+.mobile-menu-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  color: var(--color-dark);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.mobile-menu-open:focus-visible,
+.nav-link:focus-visible,
+.contacts-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    box-shadow: none;
+  }
+
+  .header-container {
+    min-height: 72px;
+    padding: 0;
+  }
+
+  .logo {
+    margin-right: 120px;
+  }
+
+  .header-nav,
+  .nav-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .contacts {
+    display: block;
+    margin-left: auto;
+  }
+
+  .contacts-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contacts-link {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+  }
+
+  .mobile-menu-open {
+    display: none;
+  }
+}
+
+@media (min-width: 1158px) {
+  .logo {
+    margin-right: 76px;
+  }
+
+  .contacts-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .contacts-link {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
 }

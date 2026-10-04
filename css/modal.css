@@ -1,4 +1,5 @@
 .backdrop {
+  z-index: 30;
   position: fixed;
   top: 0;
   left: 0;
@@ -26,12 +27,12 @@
   left: 50%;
 
   border-radius: 4px;
-  padding: 72px 24px 24px;
+  padding: 72px 16px 24px;
   transform: translate(-50%, -50%) scale(0.96);
   opacity: 0;
-  width: 100%;
-  max-width: 408px;
-  min-height: 582px;
+  width: 288px;
+  max-width: calc(100% - 32px);
+  min-height: 584px;
   box-shadow:
     0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12),
@@ -170,7 +171,7 @@
 
 .modal-policy-label {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   cursor: pointer;
 }
@@ -239,4 +240,16 @@
 .modal-submit:hover,
 .modal-submit:focus {
   background-color: var(--color-pressed);
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 408px;
+    min-height: 582px;
+    padding: 72px 24px 24px;
+  }
+
+  .modal-policy-label {
+    align-items: center;
+  }
 }

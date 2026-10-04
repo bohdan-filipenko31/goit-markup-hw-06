@@ -17,8 +17,9 @@
 }
 
 body {
+  min-width: 320px;
   font-family: "Roboto", sans-serif;
-  color: var(--color-white);
+  color: var(--color-text);
   background-color: var(--color-white);
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -57,9 +58,10 @@ img {
 }
 
 .container {
-  max-width: 1158px;
+  width: 100%;
+  max-width: 320px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 
 .section-title {
@@ -84,6 +86,21 @@ img {
   overflow: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Component styles are defined in their dedicated stylesheets.
 .header {
   border-bottom: 1px solid var(--color-accent);
   background-color: var(--color-white);
@@ -92,24 +109,24 @@ img {
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: normal;
+  padding: 16px 0;
 }
 
 .header-nav {
-  display: flex;
+  display: none;
   align-items: center;
 }
 
 .logo {
-  font-family:
-    "Raleway", sans-serif; /* Assuming Raleway for logo based on typical designs, fallback to Inter */
-  font-weight: 800;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--color-dark);
-  margin-right: 76px;
+  margin-right: auto;
 }
 
 .logo-accent {
@@ -117,7 +134,7 @@ img {
 }
 
 .nav-list {
-  display: flex;
+  display: none;
   gap: 40px;
 }
 
@@ -154,6 +171,7 @@ img {
 }
 
 .contacts {
+  display: none;
   font-style: normal;
 }
 
@@ -456,4 +474,18 @@ img {
 .footer .social-link:hover,
 .footer .social-link:focus {
   background-color: var(--color-success);
+}
+*/
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }

@@ -60,3 +60,48 @@
   letter-spacing: 0.02em;
   color: var(--color-text);
 }
+
+/* Mobile-first portfolio */
+.portfolio {
+  padding: 96px 0;
+}
+
+.portfolio-list {
+  flex-direction: column;
+  gap: 48px;
+}
+
+.portfolio-item {
+  width: 100%;
+}
+
+.portfolio-item img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .portfolio-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+  }
+
+  .portfolio-item {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media (min-width: 1158px) {
+  .portfolio {
+    padding: 120px 0;
+  }
+
+  .portfolio-list {
+    row-gap: 48px;
+  }
+
+  .portfolio-item {
+    width: calc((100% - 48px) / 3);
+  }
+}

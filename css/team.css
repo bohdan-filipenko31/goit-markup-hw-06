@@ -67,3 +67,51 @@
 .social-link:focus {
   background-color: var(--color-pressed);
 }
+
+/* Mobile-first team */
+.team {
+  padding: 96px 0;
+}
+
+.team-list {
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+}
+
+.team-item {
+  width: 264px;
+}
+
+.team-img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .team-list {
+    max-width: 552px;
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 24px;
+    row-gap: 64px;
+  }
+}
+
+@media (min-width: 1158px) {
+  .team {
+    padding: 120px 0;
+  }
+
+  .team-list {
+    max-width: none;
+    margin: 0;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+
+  .team-item {
+    width: calc((100% - 72px) / 4);
+  }
+}
