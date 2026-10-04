@@ -28,7 +28,10 @@
   background-color: var(--color-dark);
   background-image:
     linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url("../images/Hero/hero-bg.jpg");
+    image-set(
+      url("../images/Hero/hero-bg.jpg") 1x,
+      url("../images/Hero/hero-bg@2x.jpg") 2x
+    );
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -55,11 +58,14 @@
   outline-offset: 3px;
 }
 
-@media (min-resolution: 192dpi), (min-device-pixel-ratio: 2) {
+@media (min-resolution: 2dppx), (min-resolution: 192dpi), (min-device-pixel-ratio: 2) {
   .hero {
     background-image:
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url("../images/Hero/hero-bg@2x.jpg");
+      image-set(
+        url("../images/Hero/hero-bg.jpg") 1x,
+        url("../images/Hero/hero-bg@2x.jpg") 2x
+      );
   }
 }
 

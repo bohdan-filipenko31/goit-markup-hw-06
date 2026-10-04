@@ -1,6 +1,11 @@
+/* Mobile-first header */
 .header {
   border-bottom: 1px solid var(--color-accent);
   background-color: var(--color-white);
+  box-shadow:
+    0 1px 6px rgba(46, 47, 66, 0.08),
+    0 1px 1px rgba(46, 47, 66, 0.16),
+    0 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -10,14 +15,8 @@
   padding: 16px 0;
 }
 
-.header-nav {
-  display: none;
-  align-items: center;
-}
-
 .logo {
-  font-family:
-    "Raleway", sans-serif; /* Assuming Raleway for logo based on typical designs, fallback to Inter */
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
@@ -29,6 +28,11 @@
 
 .logo-accent {
   color: var(--color-primary);
+}
+
+.header-nav {
+  display: none;
+  align-items: center;
 }
 
 .nav-list {
@@ -89,27 +93,6 @@
 .contacts-link:hover,
 .contacts-link:focus {
   color: var(--color-pressed);
-}
-
-/* Mobile-first header */
-.header {
-  box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08),
-    0 1px 1px rgba(46, 47, 66, 0.16), 0 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-.header-container {
-  justify-content: normal;
-  padding: 16px 0;
-}
-
-.logo {
-  margin-right: auto;
-  font-weight: 700;
-}
-
-.header-nav,
-.contacts {
-  display: none;
 }
 
 .mobile-menu-open {
