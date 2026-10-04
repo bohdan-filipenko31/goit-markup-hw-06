@@ -90,6 +90,15 @@
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.contacts-link[href^="tel:"] {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.contacts-link[href^="mailto:"] {
+  font-weight: 500;
+}
+
 .contacts-link:hover,
 .contacts-link:focus {
   color: var(--color-pressed);
@@ -151,6 +160,15 @@
     letter-spacing: 0.04em;
   }
 
+  .contacts-link[href^="tel:"] {
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .contacts-link[href^="mailto:"] {
+    font-weight: 500;
+  }
+
   .mobile-menu-open {
     display: none;
   }
@@ -170,5 +188,14 @@
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+  }
+
+  .contacts-link[href^="tel:"] {
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .contacts-link[href^="mailto:"] {
+    font-weight: 500;
   }
 }
