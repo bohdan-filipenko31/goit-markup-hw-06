@@ -56,8 +56,44 @@
             </li>
           </ul>
         </address>
+        <button
+          class="mobile-menu-open"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="container mobile-menu-container">
+        <button class="mobile-menu-close" type="button" aria-label="Close navigation menu">
+          <svg width="8" height="8" aria-hidden="true">
+            <use href="./images/icons.svg#close"></use>
+          </svg>
+        </button>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <ul class="mobile-nav-list">
+            <li><a class="mobile-nav-link active" href="#features">Features</a></li>
+            <li><a class="mobile-nav-link" href="#team">Team</a></li>
+            <li><a class="mobile-nav-link" href="#portfolio">Portfolio</a></li>
+          </ul>
+        </nav>
+        <address class="mobile-contacts">
+          <a class="mobile-phone" href="tel:+110001111111">+11 (000) 111-11-11</a>
+          <a class="mobile-email" href="mailto:info@devstudio.com">info@devstudio.com</a>
+        </address>
+        <ul class="mobile-social-list" aria-label="Social media">
+          <li><a href="#" aria-label="Instagram"><svg width="24" height="24"><use href="./images/icons.svg#instagram"></use></svg></a></li>
+          <li><a href="#" aria-label="Twitter"><svg width="24" height="24"><use href="./images/icons.svg#twitter"></use></svg></a></li>
+          <li><a href="#" aria-label="Facebook"><svg width="24" height="24"><use href="./images/icons.svg#facebook"></use></svg></a></li>
+          <li><a href="#" aria-label="LinkedIn"><svg width="24" height="24"><use href="./images/icons.svg#linkedin"></use></svg></a></li>
+        </ul>
+      </div>
+    </div>
 
     <main>
       <section class="hero" id="hero">
@@ -307,7 +343,7 @@
             <li class="portfolio-item">
               <div class="portfolio-img-wrapper">
                 <img
-                  src="/images/Portfolio/Media.jpg"
+                  src="./images/Portfolio/Media.jpg"
                   alt="Banking App"
                   width="360"
                   height="300"
@@ -326,7 +362,7 @@
             <li class="portfolio-item">
               <div class="portfolio-img-wrapper">
                 <img
-                  src="./images/Portfolio/Media.jpg"
+                  src="./images/Portfolio/portfolio.jpg"
                   alt="Cashless Payment"
                   width="360"
                   height="300"
@@ -553,5 +589,42 @@
         </form>
       </div>
     </div>
+    <script>
+      const page = document.body;
+      const menu = document.querySelector('.mobile-menu');
+      const menuOpenButton = document.querySelector('.mobile-menu-open');
+      const menuCloseButton = document.querySelector('.mobile-menu-close');
+      const modal = document.querySelector('.backdrop');
+      const modalOpenButton = document.querySelector('.hero-btn');
+      const modalCloseButton = document.querySelector('.modal-close');
+
+      const setMenu = (isOpen) => {
+        menu.classList.toggle('is-open', isOpen);
+        menu.setAttribute('aria-hidden', String(!isOpen));
+        menuOpenButton.setAttribute('aria-expanded', String(isOpen));
+        page.classList.toggle('no-scroll', isOpen || modal.classList.contains('is-open'));
+      };
+
+      const setModal = (isOpen) => {
+        modal.classList.toggle('is-open', isOpen);
+        page.classList.toggle('no-scroll', isOpen || menu.classList.contains('is-open'));
+      };
+
+      menuOpenButton.addEventListener('click', () => setMenu(true));
+      menuCloseButton.addEventListener('click', () => setMenu(false));
+      menu.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', () => setMenu(false));
+      });
+      modalOpenButton.addEventListener('click', () => setModal(true));
+      modalCloseButton.addEventListener('click', () => setModal(false));
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) setModal(false);
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        setMenu(false);
+        setModal(false);
+      });
+    </script>
   </body>
 </html>
